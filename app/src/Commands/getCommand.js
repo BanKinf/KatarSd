@@ -6,9 +6,10 @@ const getCommand = (client) => {
         //Get first message word
         const firstMessageWord = message.split(" ")[0]
 
-        //Conditions Close
+        //Close Conditions
         if (self) {return; }
         if (message.startsWith('!katar')) {return; }
+        if (message.startsWith('http')) {return; }
         if (tags.username === "nightbot" || tags.username === "streamelements" || tags.username === "streamlabs" || tags.username === "moobot") {return; }
 
         //Fetch api from get command
@@ -19,7 +20,7 @@ const getCommand = (client) => {
                     .then(data => {
                     client.say(channel, data.content)
                 })
-             }
+            }
         })
     })
 }
