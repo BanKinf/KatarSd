@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    channelId:          { type: Number, require: true },
+    user_id:          { type: Number, require: true },
     name:               { type: String, require: true },
     channel_name:       { type: String, require: true },
     broadcaster_type:   { type: String },
@@ -11,7 +11,7 @@ const UserSchema = new Schema({
     offline_image:      { type: String, require: true },
     email:              { type: String, require: true },
     account_createdAt:  { type: String, require: true },
-    acces_token:        { type: String, require: true },
+    access_token:        { type: String, require: true },
     refresh_token:      { type: String, require: true }
 }, {
     timestamps: true

@@ -1,15 +1,14 @@
 import React from 'react'
 
 const Home = () => {
-
-    if (window.location.href === 'http://localhost:5173/') {
-        console.log("Code not found")
+    if (window.performance.navigation.type == 1) {
+        console.log("reload detected")
     } else {
         let _data = {
             code: window.location.href.split("=")[1].split("&")[0]
         }
         console.log(_data)
-        fetch('http://localhost:4000/api/token', {
+        fetch('http://localhost:4000/api/user/create', {
             method: "POST",
             body: JSON.stringify(_data),
             headers: {
@@ -17,7 +16,7 @@ const Home = () => {
             }
         })
     }
-
+    
   return (
     <div>Estamos en home</div>
   )

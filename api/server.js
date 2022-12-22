@@ -9,6 +9,7 @@ const db = require('./src/db/db');
 
 //Imports Routes
 const commandRoutes = require('./src/routes/command.routes');
+const userRoutes = require('./src/routes/user.routes')
 
 //App Express
 const app = express();
@@ -25,6 +26,7 @@ db();
 
 //Call Routes
 app.use('/api/command', commandRoutes)
+app.use('/api/user', userRoutes)
 
 //Open Server
 const port = 4000;

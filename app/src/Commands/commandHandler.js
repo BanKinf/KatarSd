@@ -27,10 +27,10 @@ const commandHandler = (client) => {
     client.on('message', (channel, tags, message, self) => {
         if (self) {return; }
 
-        const channelName = channel.split("#")[1]
-        const broadcasterBadge = tags.badges.broadcaster
-
         if (message.startsWith('!katar')) {
+
+            const channelName = channel.split("#")[1]
+            const broadcasterBadge = tags.badges.broadcaster
 
             if(broadcasterBadge === '1' || tags.mod === true) {
                 let regex; 
